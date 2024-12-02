@@ -1,11 +1,27 @@
 import React, { useState } from "react";
+import "../App.css";
 
 const ShowtimeManagement = ({ movies, showtimes, setShowtimes }) => {
-  const [newShowtime, setNewShowtime] = useState({ movieId: "", date: "", time: "", availableSeats: "" });
+  const [newShowtime, setNewShowtime] = useState({
+    movieId: "",
+    date: "",
+    time: "",
+    availableSeats: "",
+  });
 
   const handleAddShowtime = () => {
-    setShowtimes([...showtimes, { ...newShowtime, id: Date.now() }]);
-    setNewShowtime({ movieId: "", date: "", time: "", availableSeats: "" });
+    if (!newShowtime.movieId) {
+      alert("Please select a movie.");
+      return;
+    }
+    // Ensure `movieId` is stored as the same type as `id` in movies (e.g., string).
+    const formattedShowtime = {
+      ...newShowtime,
+      movieId: newShowtime.movieId.toString(),
+      id: Date.now(),
+    };
+    setShowtimes([...showtimes, formattedShowtime]);
+    setNewShowtime({ movieId: "", date: "", time: "", availableSeats: "" }); // Reset form
   };
 
   const handleDeleteShowtime = (id) => {
@@ -16,6 +32,7 @@ const ShowtimeManagement = ({ movies, showtimes, setShowtimes }) => {
     <div>
       <h2>Showtime Management</h2>
       <div>
+        {/* Dropdown for selecting a movie */}
         <select
           value={newShowtime.movieId}
           onChange={(e) => setNewShowtime({ ...newShowtime, movieId: e.target.value })}
@@ -27,6 +44,8 @@ const ShowtimeManagement = ({ movies, showtimes, setShowtimes }) => {
             </option>
           ))}
         </select>
+
+        {/* Inputs for date, time, and available seats */}
         <input
           type="date"
           value={newShowtime.date}
@@ -45,13 +64,19 @@ const ShowtimeManagement = ({ movies, showtimes, setShowtimes }) => {
         />
         <button onClick={handleAddShowtime}>Add Showtime</button>
       </div>
+
+      {/* Display the list of showtimes */}
       <ul>
-        {showtimes.map((showtime) => (
-          <li key={showtime.id}>
-            {movies.find((movie) => movie.id === showtime.movieId)?.title || "Unknown Movie"} - {showtime.date} {showtime.time}
-            <button onClick={() => handleDeleteShowtime(showtime.id)}>Delete</button>
-          </li>
-        ))}
+        {showtimes.map((showtime) => {
+          const movie = movies.find((movie) => movie.id.toString() === showtime.movieId);
+          return (
+            <li key={showtime.id}>
+              {movie ? movie.title : "Unknown Movie"} - {showtime.date} {showtime.time} 
+              ({showtime.availableSeats} seats available)
+              <button onClick={() => handleDeleteShowtime(showtime.id)}>Delete</button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../App.css';
 
 const MovieManagement = ({ movies, setMovies }) => {
   const [newMovie, setNewMovie] = useState({ title: "", genre: "", duration: "", language: "", rating: "", showtimes: [] });

@@ -1,56 +1,312 @@
-/* Global styles for the User Account Management page */
-.account-management-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-header {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+.admin-dashboard h2 {
+    font-size: 2.5rem;
+    color: #003356;
+    margin-bottom: 20px;
 }
 
-.input-field {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+.admin-tools {
+    margin-top: 20px;
 }
 
-.action-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.admin-tools h3 {
+    color: #007bff;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
 }
 
-.action-button:hover {
-  background-color: #45a049;
+.admin-tools p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
 }
 
-.switch-text {
-  text-align: center;
-  margin-top: 10px;
+.admin-tools > div {
+    margin-top: 10px;
 }
 
-.switch-text .link {
-  color: #007bff;
-  cursor: pointer;
-  text-decoration: underline;
+.admin-tools button {
+    padding: 10px 15px;
+    background-color: #f4f149;
+    color: rgb(1, 10, 81);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.switch-text .link:hover {
-  color: #0056b3;
+.admin-tools button:hover {
+    background-color: #f4e64a;
+}
+
+/* Movie Management Styles */
+.movie-management {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-management h2 {
+    font-size: 2rem;
+    color: #003356;
+    margin-bottom: 1rem;
+}
+
+.movie-management input {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: calc(20% - 10px);
+}
+
+.movie-management button {
+    padding: 10px 15px;
+    background-color: #f4f149;
+    color: rgb(1, 10, 81);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.movie-management button:hover {
+    background-color: #f4e64a;
+}
+
+.movie-management ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.movie-management li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.movie-management li:hover {
+    background-color: #f1f1f1;
+}
+
+.movie-management li button {
+    background-color: #103488;
+    transition: background-color 0.3s ease;
+}
+
+.movie-management li button:hover {
+    background-color: #103488;
+}
+
+/* Showtime Management Styles */
+.showtime-management {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.showtime-management h2 {
+    font-size: 2.5rem;
+    color: #003356;
+    margin-bottom: 20px;
+}
+
+.showtime-management select,
+.showtime-management input {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: calc(25% - 10px);
+}
+
+.showtime-management button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.showtime-management button:hover {
+    background-color: #0056b3;
+}
+
+.showtime-management ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.showtime-management li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.showtime-management li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ticket Booking Styles */
+.ticket-booking {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-booking h2 {
+    font-size: 2.5rem;
+    color: #003356;
+    margin-bottom: 20px;
+}
+
+.ticket-booking select,
+.ticket-booking input {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: calc(25% - 10px);
+}
+
+.ticket-booking button {
+    padding: 10px 15px;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-booking button:hover {
+    background-color: #e0a800;
+}
+
+.ticket-booking ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.ticket-booking li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-booking li:hover {
+    background-color: #f1f1f1;
+}
+
+/* User Account Management Styles */
+.user-account-management {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-account-management h2 {
+    font-size: 2.5rem;
+    color: #003356;
+    margin-bottom: 20px;
+}
+
+.user-account-management input,
+.user-account-management select {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: calc(30% - 10px);
+}
+
+.user-account-management button {
+    padding: 10px 15px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.user-account-management button:hover {
+    background-color: #138496;
+}
+
+.user-account-management ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.user-account-management li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.user-account-management li:hover {
+    background-color: #f1f1f1;
 }

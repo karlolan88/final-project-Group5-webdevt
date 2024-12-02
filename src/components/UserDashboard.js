@@ -1,5 +1,6 @@
 import React from 'react';
 import TicketBooking from './TicketBooking'; // Make sure this component exists
+import '../App.css';
 
 const UserDashboard = ({ users, bookings, movies, showtimes, setBookings }) => {
   // Filter out regular users from the users list
